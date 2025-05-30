@@ -8,10 +8,11 @@ import org.koin.core.annotation.Single
 @Single
 class PersonUseCase(private val personDB: PersonDB) {
 
-    fun addPerson(name: String, numImages: Long): Long {
+    fun addPerson(name: String, membershipId: String, numImages: Long): Long {
         return personDB.addPerson(
             PersonRecord(
                 personName = name,
+                membershipId = membershipId,
                 numImages = numImages,
                 addTime = System.currentTimeMillis()
             )

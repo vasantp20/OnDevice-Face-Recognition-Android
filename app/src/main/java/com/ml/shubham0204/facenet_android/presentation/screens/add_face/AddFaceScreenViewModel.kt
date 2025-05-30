@@ -21,6 +21,7 @@ class AddFaceScreenViewModel(
 ) : ViewModel() {
 
     val personNameState: MutableState<String> = mutableStateOf("")
+    val membershipIdState: MutableState<String> = mutableStateOf("")
     val selectedImageURIs: MutableState<List<Uri>> = mutableStateOf(emptyList())
 
     val isProcessingImages: MutableState<Boolean> = mutableStateOf(false)
@@ -33,6 +34,7 @@ class AddFaceScreenViewModel(
                 personUseCase.addPerson(
                     personNameState.value,
                     selectedImageURIs.value.size.toLong()
+ membershipIdState.value
                 )
             selectedImageURIs.value.forEach {
                 imageVectorUseCase

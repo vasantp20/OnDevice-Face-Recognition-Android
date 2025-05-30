@@ -23,7 +23,8 @@ data class FaceImageRecord(
 data class PersonRecord(
     // primary-key
     @Id var personID: Long = 0,
-    var personName: String = "",
+    var personName: String = "", // name of the person
+    var membershipId: String = "", // membership ID of the person
 
     // number of images selected by the user
     // under the name of the person
